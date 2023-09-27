@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('img.jpg');
+  background-size: cover; /* Adjust the background size as needed */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This can be 'scroll' for a scrolling background */
+}
