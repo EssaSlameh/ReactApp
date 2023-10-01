@@ -1,0 +1,137 @@
+
+
+h1 {
+  max-width: 40ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+@keyframes scale {
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+span {
+  display: flexbox;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 2;
+    filter: blur(0);
+  }
+}
+
+
+
+.mycard .text  {
+  position: absolute;
+  top: 62%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #ffffffd8 0, rgb(255, 136, 0) 10%, #ffffffd8 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s infinite linear, fade-in 2s forwards 1s ;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0; 
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+    filter: blur(0);
+  }
+  
+}
+
+
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 610px;
+  }
+  100% {
+    background-position: 610px;
+  }
+}
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 610px;
+  }
+  100% {
+    background-position: 610px;
+  }
+}
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 610px;
+  }
+  100% {
+    background-position: 610px;
+  }
+}
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 610px;
+  }
+  100% {
+    background-position: 610px;
+  }
+}
+
+.mycard h1 {
+  font-size: 40px;
+  margin: 0;
+  position: relative;
+  top: 300px ;
+  right: 10%;
+  color: #fff;
+}
+
+.mycard p {
+  font-size: 15px;
+  margin: 5px 0;
+}

@@ -1,0 +1,31 @@
+/* BlurryCard.css */
+
+.blurry-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.342);
+    backdrop-filter: blur(10px); /* Adjust the blur intensity */
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .blurry-card-content {
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  p {
+    margin: 0;
+  }
+  

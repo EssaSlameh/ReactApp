@@ -1,20 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Cards from './Main';
-import React from 'react'
-import './Cards.css'; // Import your CSS file
+import React from 'react';
 import Header from './Header';
+import Main from './Main';
+import './Modal.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './Homepage';
+import browsepage from './browsepage';
+
 
 
 
 function App() {
   return (
-    <body>
-      <div className="App">
-        <Header />
-        <Cards />
-      </div>
-    </body>
+    <div className="App">
+      <Header />
+      <Router>
+        <Routes>
+          <Route path='/' Component={HomePage}></Route>
+          <Route path='/Products' Component={Main}></Route>
+          <Route path='/Browse' Component={browsepage}></Route>
+        </Routes>
+      </Router>
+    </div>
   );
 
 }
