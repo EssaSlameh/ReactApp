@@ -26,10 +26,10 @@ function CardComp(props) {
                 border: '1px solid rgba(0, 0, 0, 0.1)',
                 position: 'relative',
                 boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.2)',
-                top: '22%'
+                top: '30%'
 
             }}>
-                <Card.Img variant="top" src={props.image_url} />
+                <Card.Img variant="top" src={props.strMealThumb} />
                 <Card.Body style={{
                     padding: '1rem',
                     backgroundColor: 'transparent'

@@ -1,29 +1,60 @@
-import React, { useState } from "react";
-import data from './data.json';
+import React, { useState, useEffect } from "react";
+import './select.css';
 
-function SearchBarProducts({ items, setItems }) {
-    let [searchedValue, setSearchedValue] = useState("");
+function SearchBarProducts({ onChange }) {
+    const [searchedValue, setSearchedValue] = useState("");
+    const [categories, setCategories] = useState([]);
+    const [selectedOption, setSelectedOption] = useState("All");
+
+    useEffect(() => {
+
+        fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+            .then((response) => response.json())
+            .then((data) => {
+                const allCategories = [{ strCategory: "All" }, ...data.categories];
+                setCategories(allCategories);
+            })
+            .catch((error) => {
+                console.error("Error fetching categories:", error);
+            });
+    }, []);
 
     function handleSearch(event) {
-        let inputValue = event.target.value.toLowerCase();
+        const inputValue = event.target.value.toLowerCase();
         setSearchedValue(inputValue);
+        onChange(inputValue);
+    }
 
-        let filteredItems = data.filter(item =>
-            item.title.toLowerCase().includes(inputValue)
-        );
-
-        setItems(filteredItems);
+    function handleSelectChange(category) {
+        setSelectedOption(category);
+        onChange(category === "All" ? "" : category);
     }
 
     return (
         <div className="SearchBar-Products">
             <div className="placing">
                 <form>
-                    <input type="search" placeholder="Search..." name="search" value={searchedValue} onChange={handleSearch} />
+                    <div className="input-select">
+                        <input type="search" placeholder="Search..." name="search" value={searchedValue} onChange={handleSearch} />
+                    </div>
                 </form>
             </div>
-            {items.length === 0 && searchedValue.length > 0 && (
-                <div className="no-results-message">No search results found.</div>
+            {categories.length > 0 && (
+                <div className="select">
+                    <div className="container">
+                        <button type="button" className="btn-select" value={selectedOption}>
+                            <div>{selectedOption}</div>
+                            <i className="material-icons">Food</i>
+                            <ul className="dropdown">
+                                {categories.map((category) => (
+                                    <li key={category.strCategory} category={category.strCategory} value={category.strCategory}>
+                                        <a onClick={() => handleSelectChange(category.strCategory)}>{category.strCategory}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </button>
+                    </div>
+                </div>
             )}
         </div>
     );

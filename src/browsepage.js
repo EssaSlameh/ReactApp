@@ -1,9 +1,9 @@
-
+import DropDown from "./dropDown";
 
 function browsepage() {
     return (
         <>
-        Nothing
+            <DropDown />
         </>
     );
 }

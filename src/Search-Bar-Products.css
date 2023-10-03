@@ -2,9 +2,9 @@
 
 .SearchBar-Products .placing {
     width: 100%;
-    top: 90px;
-    right: 20px;
-    position: relative;
+    top: 130px;
+    right: -45px;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +25,12 @@ input {
     background-color: transparent;
     transition: 0.5s all ease-in-out;
     backdrop-filter: blur(1px);
-
+    
 }
 
 input::placeholder{
-    color: #5a5a5a;
+    color: #ffffffe3;
+    font-weight: 300;
 }
 
 input:focus,
@@ -37,4 +38,28 @@ input:not(:placeholder-shown) {
     width: 450px;
     background-color: #fff;
     filter: brightness(100%);
+}
+
+.select select {
+    width: auto;
+    padding: 8px 30px 8px 45px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    border-radius: 25px;
+    background-position: 2% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    outline: 0;
+    background-color: transparent;
+    transition: 0.5s all ease-in-out;
+    backdrop-filter: blur(1px);
+    color: #ffffffe3;
+    font-weight: 300;
+}
+
+.select select option{
+    background-color: transparent;
+    outline: none;
+    justify-content: center;
 }

@@ -6,7 +6,6 @@ import Main from './Main';
 import './Modal.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Homepage';
-import browsepage from './browsepage';
 
 
 
@@ -18,8 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' Component={HomePage}></Route>
-          <Route path='/Products' Component={Main}></Route>
-          <Route path='/Browse' Component={browsepage}></Route>
+          <Route path='/Browse' Component={Main}></Route>
         </Routes>
       </Router>
     </div>
